@@ -41,7 +41,7 @@ $(".id").change(function() {
         $("#cantidad").removeAttr("disabled");
         $("#cantidad").val("cantidad");
         $("#precio").val( "precio" );
-        $("alert").css("display",'none')
+        $(".alert").css("display",'none')
     }).fail(function() {
         $("#mensaje").css("display",'inherit');
         $("#cantidad").val("cantidad");
