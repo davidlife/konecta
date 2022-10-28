@@ -13,13 +13,13 @@
                 <div class="form-row">
                     
                     <div class="col">
-                    <input type="number" class="form-control id" id="name" value="<?=old('id')?>" name="id" placeholder="Id"></div>
+                    <input type="number" class="form-control id" id="name" name="id" placeholder="Id"></div>
 
                     <div class="col-sm-3">
                     <input type="text" class="form-control" id="producto" value="<?=old('producto')?>" name="producto" disabled placeholder="Producto"><?=old('producto')?></div>
 
                     <div class="col">
-                    <input type="number" class="form-control cantidad" id="cantidad" value="<?=old('cantidad')?>" name="cantidad" placeholder="Cantidad"></div>
+                    <input type="number" class="form-control cantidad" disabled id="cantidad" value="<?=old('cantidad')?>" name="cantidad" placeholder="Cantidad"></div>
                       
                     <div class="col">
                     <input type="text" class="form-control" id="precio" name="precio" disabled placeholder="precio"></div>

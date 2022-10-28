@@ -36,10 +36,14 @@ $(".id").change(function() {
         }).done(function(datos) {
         $("#producto").val( datos );
         $("#mensaje").css("display",'none');
-        
+        $("#cantidad").removeAttr("disabled");
+        $("#cantidad").val( "cantidad" );
+        $("#precio").val( "precio" );
+        $(".alert").css("display",'none')
     }).fail(function() {
         $("#mensaje").css("display",'inherit');
-        $("#producto").val( "Producto" );
+        $("#cantidad").val( "cantidad" );
+        $("#cantidad").attr("disabled",'disabled');
     });
 });
 
