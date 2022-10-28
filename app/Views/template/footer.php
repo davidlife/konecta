@@ -23,11 +23,40 @@
 
 </body>
 <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> 
+
 
 <script>
 
 $(".id").change(function() {
- 
+    $.ajax({
+        url: "<?=base_url('search');?>/"+$(this).val(),
+        context: document.body,
+        method: "GET",
+        }).done(function(datos) {
+        $("#producto").val( datos );
+        $("#mensaje").addClass("invisible");
+        $(".alert").addClass("invisible");
+    }).fail(function() {
+        $("#mensaje").removeClass("invisible");
+        $("#producto").val( "Producto" );
+    });
+});
+
+$(".cantidad").change(function() {
+    $.ajax({
+        url: "<?=base_url('precio');?>/"+$("#name").val()+"/"+$(this).val(),
+        context: document.body,
+        method: "POST",
+        }).done(function(datos) {
+            $cantidad = $("#cantidad").val();
+        $("#precio").val( "$"+datos*$cantidad );
+        
+        
+    }).fail(function() {
+        $("#mensaje").removeClass("invisible");
+        $("#cantidad").val( "cantidad" );
+    });
 });
 
    

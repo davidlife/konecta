@@ -42,6 +42,10 @@ class Validation extends BaseConfig
         'nombre' =>'required|min_length[3]|max_length[255]',
         'descripcion' =>'required|min_length[3]|max_length[255]',
     ];
+    public $formVentas =[
+        'id' =>'required|integer|min_length[1]|max_length[1]',
+        'cantidad' =>'required|integer|min_length[1]|max_length[10]',
+    ];
 
     public $formProd =[
         'nombre' =>'required|min_length[3]|max_length[255]',

@@ -26,8 +26,15 @@
                     <input id="peso" class="form-control" type="text" value="<?=$producto['peso'] ?>" name="peso">
                 </div>
                 <div class="form-group">
-                    <label for="my-input">Categoría</label>
-                    <input id="categoria" class="form-control" type="text" value="<?=$producto['categoria'] ?>" name="categoria">
+                    <label for="exampleFormControlSelect1">Categoría de productos</label>
+                    <select class="form-control" id="categoria" name="categoria">
+                    
+                    <option value="">Seleccionar</option>
+                    <?php foreach($cats as $cat): ?>
+                    <option <?php if($producto['categoria']==$cat['id']){?> selected <?php }?> value="<?=$cat['id'] ?>"><?=$cat['nombre_cat'] ?></option>
+                    <?php endforeach ?>
+                    </select>
+
                 </div>
                 <div class="form-group">
                     <label for="my-input">Stock</label>

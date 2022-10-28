@@ -61,6 +61,9 @@ class Productos extends BaseController
         $datos['producto'] = $producto->where('id',$id)->first();
         $datos['header']= view('template/header');
         $datos['footer']= view('template/footer');
+
+        $cat = new categoria();
+        $datos['cats']= $cat->orderBy('id','ASC')->findAll();
         return view('productos/editar', $datos);
 
     }

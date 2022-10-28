@@ -11,20 +11,28 @@
                 <div class="form-row">
                     
                     <div class="col">
-                    <input type="number" class="form-control id" id="name" name="id" placeholder="Id"></div>
-                    <div class="col-7">
-                    <input type="text" class="form-control" name="producto" placeholder="Producto"></div>
+                    <input type="number" class="form-control id" id="name" value="<?=old('id')?>" name="id" placeholder="Id"></div>
+
+                    <div class="col-sm-3">
+                    <input type="text" class="form-control" id="producto" value="<?=old('producto')?>" name="producto" disabled placeholder="Producto"><?=old('producto')?></div>
+
                     <div class="col">
-                    <input type="text" class="form-control" id="cantidad" name="cantidad" placeholder="Cantidad"></div>
+                    <input type="number" class="form-control cantidad" id="cantidad" value="<?=old('cantidad')?>" name="cantidad" placeholder="Cantidad"></div>
+                      
                     <div class="col">
+                    <input type="text" class="form-control" id="precio" name="precio" disabled placeholder="precio"></div>
+                    
                     <button class="btn btn-info" type="submit">Vender</button>
-                    </div>
+                    
                 </div>
             </form>
         </div>
     </div>
-    <hr>
-    <h5 class="card-title">Ventas</h5>
+
+    <p class="card-title">Producto con más stock: <?php foreach ($stock as $row) {echo "$row->nombre_producto - $row->stock";}?> unidades</p>
+    <p class="card-title">Producto más vendido:</p>
+    <hr>"
+    <h5 class="card-title">Ventas</h5>"
     <table class="table table-light">
         <thead class="thead-light">
             <tr>
@@ -40,9 +48,9 @@
                 <tr>
                     <td><?=$venta['id_producto'] ?></td>
                     <td><?=$venta['id_producto'] ?></td>
+                    <td><?=$venta['nombre_producto'] ?></td>
                     <td><?=$venta['cantidad'] ?></td>
-                    <td><?=$venta['cantidad'] ?></td>
-                    <td><?=$venta['precio_venta'] ?></td>
+                    <td>$<?=$venta['precio_venta'] ?></td>
 
                     
                 </tr>

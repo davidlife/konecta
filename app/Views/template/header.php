@@ -19,7 +19,7 @@
     <div class="menu">
         <ul>
             <li class="logo">
-                <a href="#" target="_blank">
+                <a href="#" target="">
                     <img src="<?=base_url();?>/images/logokonecta.png" width="80%" alt="">
                 </a>
             </li>
@@ -39,3 +39,6 @@
 <?php if(session('msn_success')){?>
     <div class="alert alert-success" role="alert"><h5 class="alert-heading"><?php echo session('msn_success') ?></h5></div>
 <?php }?>
+
+<div class="alert alert-danger invisible" id="mensaje" role="alert"><h5 class="alert-heading">Codigo de producto no encontrado :(</h5></div>
+    

@@ -69,4 +69,5 @@ $routes->get('productos/borrar/(:num)', 'Productos::borrar/$1');
 
 $routes->post('tienda/venta', 'Tienda::venta');
 
-$routes->get('search', 'Tienda::search');
+$routes->get('search/(:num)', 'Tienda::search/$1');
+$routes->get('precio/(:num)/(:num)', 'Tienda::precio/$1/$2');
