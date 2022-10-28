@@ -22,11 +22,13 @@
 <!-- -->
 
 </body>
+
 <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> 
 
-
 <script>
+
+       
 
 $(".id").change(function() {
     $.ajax({
@@ -37,12 +39,12 @@ $(".id").change(function() {
         $("#producto").val( datos );
         $("#mensaje").css("display",'none');
         $("#cantidad").removeAttr("disabled");
-        $("#cantidad").val( "cantidad" );
+        $("#cantidad").val("cantidad");
         $("#precio").val( "precio" );
-        $(".alert").css("display",'none')
+        $("alert").css("display",'none')
     }).fail(function() {
         $("#mensaje").css("display",'inherit');
-        $("#cantidad").val( "cantidad" );
+        $("#cantidad").val("cantidad");
         $("#cantidad").attr("disabled",'disabled');
     });
 });
@@ -63,6 +65,6 @@ $(".cantidad").change(function() {
     });
 });
 
-   
+
 </script>
 </html>

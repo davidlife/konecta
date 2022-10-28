@@ -71,10 +71,11 @@ class Tienda extends Controller{
         $venta = new venta();
         $datos=[
             'id_producto'=>$this->request->getVar('id'),
+            'nombre_producto'=>$datoProducto['nombre_producto'],
             'cantidad'=>$this->request->getVar('cantidad'),
             'fecha_venta'=>date('Y/m/d H:m'),
-            'precio_venta'=>$totalVenta,
-            'nombre_producto'=>$datoProducto['nombre_producto']
+            'precio_venta'=>$totalVenta
+            
         ];
         $venta->insert($datos);
         
@@ -105,6 +106,26 @@ class Tienda extends Controller{
             $precioTotal = $precio;
            
             return $precioTotal;
+        }
+
+        public function ventas(){
+            
+            $consulta = new venta();
+            $ventas= $consulta->orderBy('id','DESC')->findAll();
+
+            $datos=[
+                'id'=>$ventas['id'],
+                'id_producto'=>$ventas['id_producto'],
+                'nombre_producto'=>$ventas['nombre_producto'],
+                'cantidad'=>$ventas['cantidad'],
+                'fecha_venta'=>$ventas['fecha_venta'],
+                'precio_venta'=>$ventas['precio_venta']
+                
+            ];
+
+           print_r( $ventas );
+            
+
         }
 
 }

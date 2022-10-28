@@ -32,12 +32,12 @@
     </div>
 
     <p class="card-title">Producto con más stock:
-         <?php foreach ($stock as $row) {echo "$row->nombre_producto - $row->stock unidades";}?></p>
+         <?php foreach ($stock as $row) {echo "$row->nombre_producto - $row->stock unidades ";}?> </p>
     <p class="card-title">Producto más vendido: 
         <?php foreach ($masVendido as $row) {echo "$row->nombre_producto - $row->cantidad unidades";}?> </p>
     <hr>
     <h5 class="card-title">Ventas</h5>
-    <table class="table table-light">
+    <table id="example" class="display table table-light">
         <thead class="thead-light">
             <tr>
                 <th>Id venta</th>
