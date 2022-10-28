@@ -29,10 +29,12 @@
         </div>
     </div>
 
-    <p class="card-title">Producto con más stock: <?php foreach ($stock as $row) {echo "$row->nombre_producto - $row->stock";}?> unidades</p>
-    <p class="card-title">Producto más vendido:</p>
-    <hr>"
-    <h5 class="card-title">Ventas</h5>"
+    <p class="card-title">Producto con más stock:
+         <?php foreach ($stock as $row) {echo "$row->nombre_producto - $row->stock unidades";}?></p>
+    <p class="card-title">Producto más vendido: 
+        <?php foreach ($masVendido as $row) {echo "$row->nombre_producto - $row->cantidad unidades";}?> </p>
+    <hr>
+    <h5 class="card-title">Ventas</h5>
     <table class="table table-light">
         <thead class="thead-light">
             <tr>

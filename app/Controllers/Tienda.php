@@ -22,7 +22,10 @@ class Tienda extends Controller{
         $db = \Config\Database::connect();
         $query = $db->query("SELECT id,nombre_producto,stock FROM productos where stock=(select max(stock) from productos)");
         $datos['stock']  = $query->getResult();
-        
+
+        $query2 = $db->query("select nombre_producto, count(cantidad) as total, sum(cantidad) as cantidad from ventas group by id_producto ORDER BY cantidad DESC LIMIT 1;
+        ");
+        $datos['masVendido']  = $query2->getResult();
         return view('index', $datos);
     }
 
