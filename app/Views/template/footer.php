@@ -35,10 +35,10 @@ $(".id").change(function() {
         method: "GET",
         }).done(function(datos) {
         $("#producto").val( datos );
-        $("#mensaje").addClass("invisible");
-        $(".alert").addClass("invisible");
+        $("#mensaje").css("display",'none');
+        
     }).fail(function() {
-        $("#mensaje").removeClass("invisible");
+        $("#mensaje").css("display",'inherit');
         $("#producto").val( "Producto" );
     });
 });

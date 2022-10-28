@@ -1,5 +1,7 @@
 <?=$header;?>
+
 <div class="container">
+
     <hr>
     <div class="card">
         <div class="card-header">
